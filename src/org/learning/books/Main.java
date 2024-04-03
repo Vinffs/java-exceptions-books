@@ -57,6 +57,7 @@ public class Main {
         }
 
 
+        // write in a new file
         File bookList = new File("./resources/booklist.txt");
         if(!bookList.exists()) {
             bookList.createNewFile();
@@ -78,7 +79,17 @@ public class Main {
             e.printStackTrace();
         }
 
+        // read and print from file
 
+        Scanner reader = new Scanner(bookList);
+
+        while (reader.hasNextLine()) {
+            String data = reader.nextLine();
+            System.out.println(data);
+        }
+
+        reader.close();
         scan.close();
+
     }
 }
