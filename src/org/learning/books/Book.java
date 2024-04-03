@@ -1,11 +1,11 @@
 package org.learning.books;
 
-public class Books {
+public class Book {
 
     private String title, author, publisher;
     private int pages;
 
-    public Books(String title, String author, String publisher, int pages) {
+    public Book(String title, String author, String publisher, int pages) {
 
         if (title.isEmpty() || author.isEmpty() || publisher.isEmpty()) {
             throw new IllegalArgumentException("Title, author, and publisher cannot be empty.");

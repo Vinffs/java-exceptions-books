@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
 
-        Books[] booksArray = null;
+        Book[] bookArray = null;
         boolean flag = false;
 
         while(!flag) {
@@ -17,7 +17,7 @@ public class Main {
 
             try {
                 int number = Integer.parseInt(scan.nextLine());
-                booksArray = new Books[number];
+                bookArray = new Book[number];
                 flag = true;
             } catch (NumberFormatException e) {
                 System.out.println("You must insert a number! Try again.");
@@ -26,7 +26,7 @@ public class Main {
         }
 
 
-        for (int i = 0; i < booksArray.length; i++) {
+        for (int i = 0; i < bookArray.length; i++) {
             System.out.println("Please insert the following data to upload the book: ");
 
             System.out.print("Title: ");
@@ -49,7 +49,7 @@ public class Main {
 
 
             try {
-                booksArray[i] = new Books(title, author, publisher, pages);
+                bookArray[i] = new Book(title, author, publisher, pages);
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
                 i--;
@@ -69,7 +69,7 @@ public class Main {
             writer.write("List Of Books" + "\n");
             writer.write("\n");
 
-            for (Books book : booksArray) {
+            for (Book book : bookArray) {
                 writer.write(book.toString());
                 writer.write("-------------------" + "\n");
             }
