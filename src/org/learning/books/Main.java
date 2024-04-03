@@ -1,9 +1,12 @@
 package org.learning.books;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
 
         Books[] booksArray = null;
@@ -53,9 +56,28 @@ public class Main {
             }
         }
 
-        for (Books book : booksArray) {
-            System.out.println(book);
+
+        File bookList = new File("./resources/booklist.txt");
+        if(!bookList.exists()) {
+            bookList.createNewFile();
         }
+
+        try {
+            FileWriter writer = new FileWriter(bookList);
+
+            writer.write("List Of Books" + "\n");
+            writer.write("\n");
+
+            for (Books book : booksArray) {
+                writer.write(book.toString());
+                writer.write("-------------------" + "\n");
+            }
+
+            writer.close();
+        } catch (IOException e ) {
+            e.printStackTrace();
+        }
+
 
         scan.close();
     }
