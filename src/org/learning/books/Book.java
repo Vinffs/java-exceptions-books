@@ -21,13 +21,30 @@ public class Book {
             this.pages = pages;
     }
 
-    @Override
-    public String toString() {
-        return "Title: " + this.title + "\n" +
-                "Author: " + this.author + "\n" +
-                "Publisher: " + this.publisher + "\n" +
-                "Pages: " + this.pages + "\n";
+//    @Override
+//    public String toString() {
+//        return "Title: " + this.title + "\n" +
+//                "Author: " + this.author + "\n" +
+//                "Publisher: " + this.publisher + "\n" +
+//                "Pages: " + this.pages + "\n";
+//    }
+
+
+    // GETTER E SETTER
+    public String getTitle() {
+        return this.title;
     }
 
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public String getPublisher() {
+        return this.publisher;
+    }
+
+    public int getPages() {
+        return this.pages;
+    }
 
 }

@@ -70,7 +70,9 @@ public class Main {
             writer.write("\n");
 
             for (Book book : bookArray) {
-                writer.write(book.toString());
+                writer.write("Title: " + book.getTitle() + "\n" + "Author: " + book.getAuthor() + "\n" +
+                        "Publisher: " + book.getAuthor() + "\n" + "Pages: " + book.getPages() + "\n"
+                );
                 writer.write("-------------------" + "\n");
             }
 
