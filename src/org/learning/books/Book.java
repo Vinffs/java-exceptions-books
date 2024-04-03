@@ -7,7 +7,7 @@ public class Book {
 
     public Book(String title, String author, String publisher, int pages) {
 
-        if (title.isEmpty() || author.isEmpty() || publisher.isEmpty()) {
+        if (title == null || author == null || publisher == null || title.isEmpty()  || author.isEmpty() || publisher.isEmpty()) {
             throw new IllegalArgumentException("Title, author, and publisher cannot be empty.");
         }
 
